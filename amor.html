@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de San Valentín, mi Leslie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            min-height: 100vh;
+            overflow-y: auto;
+            cursor: pointer;
+        }
+
+        .heart, .flower {
+            position: absolute;
+            animation: float 6s infinite;
+            font-size: 2em;
+        }
+
+        .heart {
+            color: #fff;
+        }
+
+        .flower {
+            color: yellow;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            white-space: pre-line;
+        }
+
+        .footer {
+            position: relative;
+            bottom: 20px;
+            width: 100%;
+            font-size: 1em;
+            margin-top: 50px;
+        }
+
+        .flowers {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .flowers img {
+            width: 100px;
+            margin: 0 10px;
+        }
+
+        #videoContainer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            height: 150px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            allow: autoplay;
+        }
+
+        @media (max-width: 600px) {
+            #videoContainer {
+                width: 200px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz Día de San Valentín, mi Leslie ❤️</h1>
+    <p>Mi Leslie querida,
+
+Desde aquel mágico 14 de octubre en que nuestras miradas volvieron a encontrarse, mi vida tomó un giro inesperado, un cambio que jamás imaginé experimentar. Fue como si el universo hubiese decidido regalarme una nueva oportunidad, una segunda vez para amar y valorar a la mujer extraordinaria que eres. Ese día marcó el comienzo de una historia renovada, de un amor que, a pesar del tiempo y las circunstancias, se mantiene firme, intenso y sincero.
+
+Desde entonces, cada instante a tu lado es un tesoro que guardo en lo más profundo de mi corazón. Tu risa, que ilumina incluso los días más oscuros, tu mirada, que me envuelve en un cálido refugio, y tu presencia, que convierte cualquier espacio en un hogar. Eres esa compañera leal, esa amiga incondicional, esa mujer que con su paciencia, ternura y fortaleza ha sabido sostenerme cuando las fuerzas flaqueaban.
+
+Te agradezco infinitamente por todo lo que has hecho por mí, por tu apoyo incondicional, por tu amor sin condiciones, por tu fe en nosotros cuando las dudas intentaban oscurecer nuestro camino. Eres, sin duda alguna, la mujer de mi vida, el amor que llegó para quedarse, el anhelo que se volvió realidad.
+
+Sé que quizás en este día especial la economía no nos permite grandes gestos materiales, pero quiero que sepas que este humilde detalle, nacido desde lo más profundo de mi alma, tiene un valor que el dinero jamás podrá comprar. Es un reflejo de mis sentimientos más sinceros, de ese amor que crece con cada amanecer, con cada sonrisa tuya, con cada abrazo que nos envuelve.
+
+Te amo, mi Leslie, te amo con la fuerza de mil tormentas y la suavidad de la brisa que acaricia al atardecer. Te amo porque en ti encontré el verdadero significado de la felicidad, de la paz y de esa complicidad que hace que, juntos, seamos invencibles.
+
+Gracias por existir, por amarme, por enseñarme que el amor verdadero no se mide en gestos grandiosos, sino en la capacidad de estar presente, de compartir silencios y de construir sueños compartidos. Hoy, mañana y siempre, mi corazón es tuyo, y mi amor te pertenece.
+
+Con todo mi ser, te digo: nunca dudes de lo que siento por ti. Eres mi compañera, mi amiga, mi amor eterno.
+
+Te amo hoy, mañana y por toda la eternidad.
+
+Feliz San Valentín, mi amor. ❤️
+
+Atte: Vicente
+    </p>
+
+    <div class="flowers">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Sunflower.jpg" alt="Flores Amarillas">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Sunflower.jpg" alt="Flores Amarillas">
+    </div>
+
+    <div class="footer">Hecho con 💖 solo para ti mi Choca.</div>
+
+    <div id="videoContainer">
+        <iframe src="https://www.youtube.com/embed/Yh0b_VTwAZY?autoplay=1&mute=0&playlist=Yh0b_VTwAZY&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function createHeartOrFlower() {
+            const element = document.createElement('div');
+            element.className = Math.random() > 0.5 ? 'heart' : 'flower';
+            element.textContent = element.className === 'heart' ? '💖' : '🌻';
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            element.style.fontSize = Math.random() * 2 + 1 + 'em';
+            document.body.appendChild(element);
+
+            setTimeout(() => {
+                element.remove();
+            }, 6000);
+        }
+        setInterval(createHeartOrFlower, 300);
+    </script>
+</body>
+</html>
+
